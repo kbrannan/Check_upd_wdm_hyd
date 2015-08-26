@@ -1,0 +1,749 @@
+
+ Processing information contained in TSPROC input file tsproc.dat....
+
+ Processing SETTINGS block....
+    DATE_FORMAT mm/dd/yyyy
+    CONTEXT pest_prep
+    Processing of SETTINGS block complete.
+
+ Processing GET_SERIES_WDM block....
+    CONTEXT all
+    FILE C:\Users\kbrannan\Documents\BigElkCreek\parest\bigelk_out.wdm
+    DSN 102
+    NEW_SERIES_NAME mflow
+    DEF_TIME 00:00:00
+    FILTER -999
+    Reading WDM file C:\Users\kbrannan\Documents\BigElkCreek\parest\bigelk_out.wdm....
+    Series "mflow" successfully imported from file C:\Users\kbrannan\Documents\BigElkCreek\parest\bigelk_out.wdm
+
+ Processing GET_SERIES_WDM block....
+    CONTEXT all
+    FILE C:\Users\kbrannan\Documents\BigElkCreek\parest\bigelk_out.wdm
+    DSN 301
+    NEW_SERIES_NAME oflow
+    DEF_TIME 00:00:00
+    FILTER -999
+    Reading WDM file C:\Users\kbrannan\Documents\BigElkCreek\parest\bigelk_out.wdm....
+    Series "oflow" successfully imported from file C:\Users\kbrannan\Documents\BigElkCreek\parest\bigelk_out.wdm
+
+ Processing GET_SERIES_WDM block....
+    CONTEXT all
+    FILE C:\Users\kbrannan\Documents\BigElkCreek\parest\bigelk_out.wdm
+    DSN 103
+    NEW_SERIES_NAME mpero
+    FILTER -999
+    Reading WDM file C:\Users\kbrannan\Documents\BigElkCreek\parest\bigelk_out.wdm....
+    Series "mpero" successfully imported from file C:\Users\kbrannan\Documents\BigElkCreek\parest\bigelk_out.wdm
+
+ Processing GET_SERIES_WDM block....
+    CONTEXT all
+    FILE C:\Users\kbrannan\Documents\BigElkCreek\parest\bigelk_out.wdm
+    DSN 104
+    NEW_SERIES_NAME magwo
+    FILTER -999
+    Reading WDM file C:\Users\kbrannan\Documents\BigElkCreek\parest\bigelk_out.wdm....
+    Series "magwo" successfully imported from file C:\Users\kbrannan\Documents\BigElkCreek\parest\bigelk_out.wdm
+
+ Processing SERIES_EQUATION block....
+    CONTEXT all
+    NEW_SERIES_NAME mlog
+    EQUATION "log10(mflow+0.0001)"
+    Series "mlog" successfully calculated using series equation.
+
+ Processing SERIES_EQUATION block....
+    CONTEXT pest_prep
+    NEW_SERIES_NAME olog
+    EQUATION "log10(oflow+0.0001)"
+    Series "olog" successfully calculated using series equation.
+
+ Processing VOLUME_CALCULATION block....
+    CONTEXT all
+    SERIES_NAME mpero
+    NEW_V_TABLE_NAME mpero_tot
+    DATE_FILE dates_tot.dat
+    FLOW_TIME_UNITS hours
+    FACTOR 1.0000000
+    Reading dates file dates_tot.dat....
+    File dates_tot.dat read ok.
+    Volumes calculated and stored in v_table "mpero_tot".
+
+ Processing VOLUME_CALCULATION block....
+    CONTEXT all
+    SERIES_NAME magwo
+    NEW_V_TABLE_NAME magwo_tot
+    DATE_FILE dates_tot.dat
+    FLOW_TIME_UNITS hours
+    FACTOR 1.0000000
+    Reading dates file dates_tot.dat....
+    File dates_tot.dat read ok.
+    Volumes calculated and stored in v_table "magwo_tot".
+
+ Processing V_TABLE_TO_SERIES block....
+    CONTEXT all
+    V_TABLE_NAME mpero_tot
+    NEW_SERIES_NAME mpero_ser
+    TIME_ABSCISSA end
+    Data from v_table stored in series "mpero_ser".
+
+ Processing V_TABLE_TO_SERIES block....
+    CONTEXT all
+    V_TABLE_NAME magwo_tot
+    NEW_SERIES_NAME magwo_ser
+    TIME_ABSCISSA end
+    Data from v_table stored in series "magwo_ser".
+
+ Processing SERIES_EQUATION block....
+    CONTEXT all
+    NEW_SERIES_NAME mbaseind
+    EQUATION "magwo_ser / mpero_ser"
+    Series "mbaseind" successfully calculated using series equation.
+
+ Processing SERIES_EQUATION block....
+    CONTEXT pest_prep
+    NEW_SERIES_NAME obaseind
+    EQUATION "mpero_ser * 0 + 0.44"
+    Series "obaseind" successfully calculated using series equation.
+
+ Processing VOLUME_CALCULATION block....
+    CONTEXT all
+    SERIES_NAME mflow
+    NEW_V_TABLE_NAME mvol_ann
+    DATE_FILE dates_ann.dat
+    FLOW_TIME_UNITS seconds
+    FACTOR 1.0000000
+    Reading dates file dates_ann.dat....
+    File dates_ann.dat read ok.
+    Volumes calculated and stored in v_table "mvol_ann".
+
+ Processing VOLUME_CALCULATION block....
+    CONTEXT pest_prep
+    SERIES_NAME oflow
+    NEW_V_TABLE_NAME ovol_ann
+    DATE_FILE dates_ann.dat
+    FLOW_TIME_UNITS seconds
+    FACTOR 1.0000000
+    Reading dates file dates_ann.dat....
+    File dates_ann.dat read ok.
+    Volumes calculated and stored in v_table "ovol_ann".
+
+ Processing VOLUME_CALCULATION block....
+    CONTEXT all
+    SERIES_NAME mflow
+    NEW_V_TABLE_NAME mvol_smr
+    DATE_FILE dates_smr.dat
+    FLOW_TIME_UNITS seconds
+    FACTOR 1.0000000
+    Reading dates file dates_smr.dat....
+    File dates_smr.dat read ok.
+    Volumes calculated and stored in v_table "mvol_smr".
+
+ Processing VOLUME_CALCULATION block....
+    CONTEXT pest_prep
+    SERIES_NAME oflow
+    NEW_V_TABLE_NAME ovol_smr
+    DATE_FILE dates_smr.dat
+    FLOW_TIME_UNITS seconds
+    FACTOR 1.0000000
+    Reading dates file dates_smr.dat....
+    File dates_smr.dat read ok.
+    Volumes calculated and stored in v_table "ovol_smr".
+
+ Processing VOLUME_CALCULATION block....
+    CONTEXT all
+    SERIES_NAME mflow
+    NEW_V_TABLE_NAME mvol_wtr
+    DATE_FILE dates_wtr.dat
+    FLOW_TIME_UNITS seconds
+    FACTOR 1.0000000
+    Reading dates file dates_wtr.dat....
+    File dates_wtr.dat read ok.
+    Volumes calculated and stored in v_table "mvol_wtr".
+
+ Processing VOLUME_CALCULATION block....
+    CONTEXT pest_prep
+    SERIES_NAME oflow
+    NEW_V_TABLE_NAME ovol_wtr
+    DATE_FILE dates_wtr.dat
+    FLOW_TIME_UNITS seconds
+    FACTOR 1.0000000
+    Reading dates file dates_wtr.dat....
+    File dates_wtr.dat read ok.
+    Volumes calculated and stored in v_table "ovol_wtr".
+
+ Processing VOLUME_CALCULATION block....
+    CONTEXT all
+    SERIES_NAME mflow
+    NEW_V_TABLE_NAME mvol_stm
+    DATE_FILE dates_stm.dat
+    FLOW_TIME_UNITS seconds
+    FACTOR 1.0000000
+    Reading dates file dates_stm.dat....
+    File dates_stm.dat read ok.
+    Volumes calculated and stored in v_table "mvol_stm".
+
+ Processing VOLUME_CALCULATION block....
+    CONTEXT pest_prep
+    SERIES_NAME oflow
+    NEW_V_TABLE_NAME ovol_stm
+    DATE_FILE dates_stm.dat
+    FLOW_TIME_UNITS seconds
+    FACTOR 1.0000000
+    Reading dates file dates_stm.dat....
+    File dates_stm.dat read ok.
+    Volumes calculated and stored in v_table "ovol_stm".
+
+ Processing SERIES_STATISTICS block....
+    CONTEXT all
+    SERIES_NAME mflow
+    NEW_S_TABLE_NAME mpeak1
+    MAXIMUM yes
+    DATE_1 02/05/1996
+    TIME_1 00:00:00
+    DATE_2 02/17/1996
+    TIME_2 00:00:00
+    Statistics for time series "mflow" stored in S_TABLE "mpeak1".
+
+ Processing SERIES_STATISTICS block....
+    CONTEXT pest_prep
+    SERIES_NAME oflow
+    NEW_S_TABLE_NAME opeak1
+    MAXIMUM yes
+    DATE_1 02/05/1996
+    TIME_1 00:00:00
+    DATE_2 02/17/1996
+    TIME_2 00:00:00
+    Statistics for time series "oflow" stored in S_TABLE "opeak1".
+
+ Processing SERIES_STATISTICS block....
+    CONTEXT all
+    SERIES_NAME mflow
+    NEW_S_TABLE_NAME mpeak2
+    MAXIMUM yes
+    DATE_1 01/28/1997
+    TIME_1 00:00:00
+    DATE_2 02/07/1997
+    TIME_2 00:00:00
+    Statistics for time series "mflow" stored in S_TABLE "mpeak2".
+
+ Processing SERIES_STATISTICS block....
+    CONTEXT pest_prep
+    SERIES_NAME oflow
+    NEW_S_TABLE_NAME opeak2
+    MAXIMUM yes
+    DATE_1 01/28/1997
+    TIME_1 00:00:00
+    DATE_2 02/07/1997
+    TIME_2 00:00:00
+    Statistics for time series "oflow" stored in S_TABLE "opeak2".
+
+ Processing SERIES_STATISTICS block....
+    CONTEXT all
+    SERIES_NAME mflow
+    NEW_S_TABLE_NAME mpeak3
+    MAXIMUM yes
+    DATE_1 10/29/1997
+    TIME_1 00:00:00
+    DATE_2 11/06/1997
+    TIME_2 00:00:00
+    Statistics for time series "mflow" stored in S_TABLE "mpeak3".
+
+ Processing SERIES_STATISTICS block....
+    CONTEXT pest_prep
+    SERIES_NAME oflow
+    NEW_S_TABLE_NAME opeak3
+    MAXIMUM yes
+    DATE_1 10/29/1997
+    TIME_1 00:00:00
+    DATE_2 11/06/1997
+    TIME_2 00:00:00
+    Statistics for time series "oflow" stored in S_TABLE "opeak3".
+
+ Processing SERIES_STATISTICS block....
+    CONTEXT all
+    SERIES_NAME mflow
+    NEW_S_TABLE_NAME mpeak4
+    MAXIMUM yes
+    DATE_1 12/29/1998
+    TIME_1 00:00:00
+    DATE_2 01/04/1999
+    TIME_2 00:00:00
+    Statistics for time series "mflow" stored in S_TABLE "mpeak4".
+
+ Processing SERIES_STATISTICS block....
+    CONTEXT pest_prep
+    SERIES_NAME oflow
+    NEW_S_TABLE_NAME opeak4
+    MAXIMUM yes
+    DATE_1 12/29/1998
+    TIME_1 00:00:00
+    DATE_2 01/04/1999
+    TIME_2 00:00:00
+    Statistics for time series "oflow" stored in S_TABLE "opeak4".
+
+ Processing SERIES_STATISTICS block....
+    CONTEXT all
+    SERIES_NAME mflow
+    NEW_S_TABLE_NAME mpeak5
+    MAXIMUM yes
+    DATE_1 05/09/2000
+    TIME_1 00:00:00
+    DATE_2 05/19/2000
+    TIME_2 00:00:00
+    Statistics for time series "mflow" stored in S_TABLE "mpeak5".
+
+ Processing SERIES_STATISTICS block....
+    CONTEXT pest_prep
+    SERIES_NAME oflow
+    NEW_S_TABLE_NAME opeak5
+    MAXIMUM yes
+    DATE_1 05/09/2000
+    TIME_1 00:00:00
+    DATE_2 05/19/2000
+    TIME_2 00:00:00
+    Statistics for time series "oflow" stored in S_TABLE "opeak5".
+
+ Processing SERIES_STATISTICS block....
+    CONTEXT all
+    SERIES_NAME mflow
+    NEW_S_TABLE_NAME mpeak6
+    MAXIMUM yes
+    DATE_1 12/22/2000
+    TIME_1 00:00:00
+    DATE_2 12/29/2000
+    TIME_2 00:00:00
+    Statistics for time series "mflow" stored in S_TABLE "mpeak6".
+
+ Processing SERIES_STATISTICS block....
+    CONTEXT pest_prep
+    SERIES_NAME oflow
+    NEW_S_TABLE_NAME opeak6
+    MAXIMUM yes
+    DATE_1 12/22/2000
+    TIME_1 00:00:00
+    DATE_2 12/29/2000
+    TIME_2 00:00:00
+    Statistics for time series "oflow" stored in S_TABLE "opeak6".
+
+ Processing SERIES_STATISTICS block....
+    CONTEXT all
+    SERIES_NAME mflow
+    NEW_S_TABLE_NAME mpeak7
+    MAXIMUM yes
+    DATE_1 01/06/2002
+    TIME_1 00:00:00
+    DATE_2 01/16/2002
+    TIME_2 00:00:00
+    Statistics for time series "mflow" stored in S_TABLE "mpeak7".
+
+ Processing SERIES_STATISTICS block....
+    CONTEXT pest_prep
+    SERIES_NAME oflow
+    NEW_S_TABLE_NAME opeak7
+    MAXIMUM yes
+    DATE_1 01/06/2002
+    TIME_1 00:00:00
+    DATE_2 01/16/2002
+    TIME_2 00:00:00
+    Statistics for time series "oflow" stored in S_TABLE "opeak7".
+
+ Processing SERIES_STATISTICS block....
+    CONTEXT all
+    SERIES_NAME mflow
+    NEW_S_TABLE_NAME mpeak8
+    MAXIMUM yes
+    DATE_1 01/29/2003
+    TIME_1 00:00:00
+    DATE_2 02/07/2003
+    TIME_2 00:00:00
+    Statistics for time series "mflow" stored in S_TABLE "mpeak8".
+
+ Processing SERIES_STATISTICS block....
+    CONTEXT pest_prep
+    SERIES_NAME oflow
+    NEW_S_TABLE_NAME opeak8
+    MAXIMUM yes
+    DATE_1 01/29/2003
+    TIME_1 00:00:00
+    DATE_2 02/07/2003
+    TIME_2 00:00:00
+    Statistics for time series "oflow" stored in S_TABLE "opeak8".
+
+ Processing SERIES_STATISTICS block....
+    CONTEXT all
+    SERIES_NAME mflow
+    NEW_S_TABLE_NAME mpeak9
+    MAXIMUM yes
+    DATE_1 12/13/2003
+    TIME_1 00:00:00
+    DATE_2 12/18/2003
+    TIME_2 00:00:00
+    Statistics for time series "mflow" stored in S_TABLE "mpeak9".
+
+ Processing SERIES_STATISTICS block....
+    CONTEXT pest_prep
+    SERIES_NAME oflow
+    NEW_S_TABLE_NAME opeak9
+    MAXIMUM yes
+    DATE_1 12/13/2003
+    TIME_1 00:00:00
+    DATE_2 12/18/2003
+    TIME_2 00:00:00
+    Statistics for time series "oflow" stored in S_TABLE "opeak9".
+
+ Processing SERIES_STATISTICS block....
+    CONTEXT all
+    SERIES_NAME mflow
+    NEW_S_TABLE_NAME mpeak10
+    MAXIMUM yes
+    DATE_1 04/19/2004
+    TIME_1 00:00:00
+    DATE_2 04/29/2004
+    TIME_2 00:00:00
+    Statistics for time series "mflow" stored in S_TABLE "mpeak10".
+
+ Processing SERIES_STATISTICS block....
+    CONTEXT pest_prep
+    SERIES_NAME oflow
+    NEW_S_TABLE_NAME opeak10
+    MAXIMUM yes
+    DATE_1 04/19/2004
+    TIME_1 00:00:00
+    DATE_2 04/29/2004
+    TIME_2 00:00:00
+    Statistics for time series "oflow" stored in S_TABLE "opeak10".
+
+ Processing SERIES_STATISTICS block....
+    CONTEXT all
+    SERIES_NAME mflow
+    NEW_S_TABLE_NAME mpeak11
+    MAXIMUM yes
+    DATE_1 06/05/2005
+    TIME_1 00:00:00
+    DATE_2 06/15/2005
+    TIME_2 00:00:00
+    Statistics for time series "mflow" stored in S_TABLE "mpeak11".
+
+ Processing SERIES_STATISTICS block....
+    CONTEXT pest_prep
+    SERIES_NAME oflow
+    NEW_S_TABLE_NAME opeak11
+    MAXIMUM yes
+    DATE_1 06/05/2005
+    TIME_1 00:00:00
+    DATE_2 06/15/2005
+    TIME_2 00:00:00
+    Statistics for time series "oflow" stored in S_TABLE "opeak11".
+
+ Processing SERIES_STATISTICS block....
+    CONTEXT all
+    SERIES_NAME mflow
+    NEW_S_TABLE_NAME mpeak12
+    MAXIMUM yes
+    DATE_1 11/11/2005
+    TIME_1 00:00:00
+    DATE_2 11/19/2005
+    TIME_2 00:00:00
+    Statistics for time series "mflow" stored in S_TABLE "mpeak12".
+
+ Processing SERIES_STATISTICS block....
+    CONTEXT pest_prep
+    SERIES_NAME oflow
+    NEW_S_TABLE_NAME opeak12
+    MAXIMUM yes
+    DATE_1 11/11/2005
+    TIME_1 00:00:00
+    DATE_2 11/19/2005
+    TIME_2 00:00:00
+    Statistics for time series "oflow" stored in S_TABLE "opeak12".
+
+ Processing SERIES_STATISTICS block....
+    CONTEXT all
+    SERIES_NAME mflow
+    NEW_S_TABLE_NAME mpeak13
+    MAXIMUM yes
+    DATE_1 12/14/2006
+    TIME_1 00:00:00
+    DATE_2 12/17/2006
+    TIME_2 00:00:00
+    Statistics for time series "mflow" stored in S_TABLE "mpeak13".
+
+ Processing SERIES_STATISTICS block....
+    CONTEXT pest_prep
+    SERIES_NAME oflow
+    NEW_S_TABLE_NAME opeak13
+    MAXIMUM yes
+    DATE_1 12/14/2006
+    TIME_1 00:00:00
+    DATE_2 12/17/2006
+    TIME_2 00:00:00
+    Statistics for time series "oflow" stored in S_TABLE "opeak13".
+
+ Processing SERIES_STATISTICS block....
+    CONTEXT all
+    SERIES_NAME mflow
+    NEW_S_TABLE_NAME mpeak14
+    MAXIMUM yes
+    DATE_1 12/01/2007
+    TIME_1 00:00:00
+    DATE_2 12/11/2007
+    TIME_2 00:00:00
+    Statistics for time series "mflow" stored in S_TABLE "mpeak14".
+
+ Processing SERIES_STATISTICS block....
+    CONTEXT pest_prep
+    SERIES_NAME oflow
+    NEW_S_TABLE_NAME opeak14
+    MAXIMUM yes
+    DATE_1 12/01/2007
+    TIME_1 00:00:00
+    DATE_2 12/11/2007
+    TIME_2 00:00:00
+    Statistics for time series "oflow" stored in S_TABLE "opeak14".
+
+ Processing SERIES_STATISTICS block....
+    CONTEXT all
+    SERIES_NAME mflow
+    NEW_S_TABLE_NAME mpeak15
+    MAXIMUM yes
+    DATE_1 11/11/2008
+    TIME_1 00:00:00
+    DATE_2 11/19/2008
+    TIME_2 00:00:00
+    Statistics for time series "mflow" stored in S_TABLE "mpeak15".
+
+ Processing SERIES_STATISTICS block....
+    CONTEXT pest_prep
+    SERIES_NAME oflow
+    NEW_S_TABLE_NAME opeak15
+    MAXIMUM yes
+    DATE_1 11/11/2008
+    TIME_1 00:00:00
+    DATE_2 11/19/2008
+    TIME_2 00:00:00
+    Statistics for time series "oflow" stored in S_TABLE "opeak15".
+
+ Processing SERIES_STATISTICS block....
+    CONTEXT all
+    SERIES_NAME mflow
+    NEW_S_TABLE_NAME mpeak16
+    MAXIMUM yes
+    DATE_1 03/14/2009
+    TIME_1 00:00:00
+    DATE_2 03/21/2009
+    TIME_2 00:00:00
+    Statistics for time series "mflow" stored in S_TABLE "mpeak16".
+
+ Processing SERIES_STATISTICS block....
+    CONTEXT pest_prep
+    SERIES_NAME oflow
+    NEW_S_TABLE_NAME opeak16
+    MAXIMUM yes
+    DATE_1 03/14/2009
+    TIME_1 00:00:00
+    DATE_2 03/21/2009
+    TIME_2 00:00:00
+    Statistics for time series "oflow" stored in S_TABLE "opeak16".
+
+ Processing SERIES_STATISTICS block....
+    CONTEXT all
+    SERIES_NAME mflow
+    NEW_S_TABLE_NAME mpeak17
+    MAXIMUM yes
+    DATE_1 03/11/2010
+    TIME_1 00:00:00
+    DATE_2 03/19/2010
+    TIME_2 00:00:00
+    Statistics for time series "mflow" stored in S_TABLE "mpeak17".
+
+ Processing SERIES_STATISTICS block....
+    CONTEXT pest_prep
+    SERIES_NAME oflow
+    NEW_S_TABLE_NAME opeak17
+    MAXIMUM yes
+    DATE_1 03/11/2010
+    TIME_1 00:00:00
+    DATE_2 03/19/2010
+    TIME_2 00:00:00
+    Statistics for time series "oflow" stored in S_TABLE "opeak17".
+
+ Processing SERIES_STATISTICS block....
+    CONTEXT all
+    SERIES_NAME mflow
+    NEW_S_TABLE_NAME mpeak18
+    MAXIMUM yes
+    DATE_1 11/30/2010
+    TIME_1 00:00:00
+    DATE_2 12/05/2010
+    TIME_2 00:00:00
+    Statistics for time series "mflow" stored in S_TABLE "mpeak18".
+
+ Processing SERIES_STATISTICS block....
+    CONTEXT pest_prep
+    SERIES_NAME oflow
+    NEW_S_TABLE_NAME opeak18
+    MAXIMUM yes
+    DATE_1 11/30/2010
+    TIME_1 00:00:00
+    DATE_2 12/05/2010
+    TIME_2 00:00:00
+    Statistics for time series "oflow" stored in S_TABLE "opeak18".
+
+ Processing EXCEEDENCE_TIME block....
+    CONTEXT all
+    SERIES_NAME mflow
+    NEW_E_TABLE_NAME mtime
+    FLOW_TIME_UNITS days
+    UNDER_OVER over
+    FLOW 10.7
+    FLOW 143
+    FLOW 431
+    FLOW 951
+    FLOW 1450
+    Exceedence times calculated and stored in e_table "mtime".
+
+ Processing EXCEEDENCE_TIME block....
+    CONTEXT pest_prep
+    SERIES_NAME oflow
+    NEW_E_TABLE_NAME otime
+    FLOW_TIME_UNITS days
+    UNDER_OVER over
+    FLOW 10.7
+    FLOW 143
+    FLOW 431
+    FLOW 951
+    FLOW 1450
+    Exceedence times calculated and stored in e_table "otime".
+
+ Processing LIST_OUTPUT block....
+    CONTEXT all
+    FILE model.out
+    SERIES_NAME mlog
+    SERIES_FORMAT short
+    SERIES_NAME mflow
+    SERIES_FORMAT short
+    SERIES_NAME mbaseind
+    SERIES_FORMAT short
+    V_TABLE_NAME mvol_ann
+    V_TABLE_NAME mvol_smr
+    V_TABLE_NAME mvol_wtr
+    V_TABLE_NAME mvol_stm
+    S_TABLE_NAME mpeak1
+    S_TABLE_NAME mpeak2
+    S_TABLE_NAME mpeak3
+    S_TABLE_NAME mpeak4
+    S_TABLE_NAME mpeak5
+    S_TABLE_NAME mpeak6
+    S_TABLE_NAME mpeak7
+    S_TABLE_NAME mpeak8
+    S_TABLE_NAME mpeak9
+    S_TABLE_NAME mpeak10
+    S_TABLE_NAME mpeak11
+    S_TABLE_NAME mpeak12
+    S_TABLE_NAME mpeak13
+    S_TABLE_NAME mpeak14
+    S_TABLE_NAME mpeak15
+    S_TABLE_NAME mpeak16
+    S_TABLE_NAME mpeak17
+    S_TABLE_NAME mpeak18
+    E_TABLE_NAME mtime
+    Writing output file model.out....
+    File model.out written ok.
+
+ Processing WRITE_PEST_FILES block....
+    CONTEXT pest_prep
+    TEMPLATE_FILE p2p_bigelk.tpl
+    MODEL_INPUT_FILE p2p_bigelk.dat
+    PARAMETER_DATA_FILE parm.dat
+    PARAMETER_GROUP_FILE group.dat
+    NEW_PEST_CONTROL_FILE control.pst
+    NEW_INSTRUCTION_FILE model.ins
+    MODEL_COMMAND_LINE model.bat
+    AUTOMATIC_USER_INTERVENTION yes
+    OBSERVATION_SERIES_NAME olog
+    MODEL_SERIES_NAME mlog
+    SERIES_WEIGHTS_EQUATION "0.1/(@_abs_value)"
+    SERIES_WEIGHTS_MIN_MAX 1.0000E-7   1000.0000
+    OBSERVATION_SERIES_NAME oflow
+    MODEL_SERIES_NAME mflow
+    SERIES_WEIGHTS_EQUATION "0"
+    OBSERVATION_V_TABLE_NAME ovol_ann
+    MODEL_V_TABLE_NAME mvol_ann
+    V_TABLE_WEIGHTS_EQUATION "0.01"
+    OBSERVATION_V_TABLE_NAME ovol_smr
+    MODEL_V_TABLE_NAME mvol_smr
+    V_TABLE_WEIGHTS_EQUATION "0.01"
+    OBSERVATION_V_TABLE_NAME ovol_wtr
+    MODEL_V_TABLE_NAME mvol_wtr
+    V_TABLE_WEIGHTS_EQUATION "0.01"
+    OBSERVATION_V_TABLE_NAME ovol_stm
+    MODEL_V_TABLE_NAME mvol_stm
+    V_TABLE_WEIGHTS_EQUATION "0.01"
+    OBSERVATION_S_TABLE_NAME opeak1
+    MODEL_S_TABLE_NAME mpeak1
+    S_TABLE_WEIGHTS_EQUATION "0.01"
+    OBSERVATION_S_TABLE_NAME opeak2
+    MODEL_S_TABLE_NAME mpeak2
+    S_TABLE_WEIGHTS_EQUATION "0.01"
+    OBSERVATION_S_TABLE_NAME opeak3
+    MODEL_S_TABLE_NAME mpeak3
+    S_TABLE_WEIGHTS_EQUATION "0.01"
+    OBSERVATION_S_TABLE_NAME opeak4
+    MODEL_S_TABLE_NAME mpeak4
+    S_TABLE_WEIGHTS_EQUATION "0.01"
+    OBSERVATION_S_TABLE_NAME opeak5
+    MODEL_S_TABLE_NAME mpeak5
+    S_TABLE_WEIGHTS_EQUATION "0.01"
+    OBSERVATION_S_TABLE_NAME opeak6
+    MODEL_S_TABLE_NAME mpeak6
+    S_TABLE_WEIGHTS_EQUATION "0.01"
+    OBSERVATION_S_TABLE_NAME opeak7
+    MODEL_S_TABLE_NAME mpeak7
+    S_TABLE_WEIGHTS_EQUATION "0.01"
+    OBSERVATION_S_TABLE_NAME opeak8
+    MODEL_S_TABLE_NAME mpeak8
+    S_TABLE_WEIGHTS_EQUATION "0.01"
+    OBSERVATION_S_TABLE_NAME opeak9
+    MODEL_S_TABLE_NAME mpeak9
+    S_TABLE_WEIGHTS_EQUATION "0.01"
+    OBSERVATION_S_TABLE_NAME opeak10
+    MODEL_S_TABLE_NAME mpeak10
+    S_TABLE_WEIGHTS_EQUATION "0.01"
+    OBSERVATION_S_TABLE_NAME opeak11
+    MODEL_S_TABLE_NAME mpeak11
+    S_TABLE_WEIGHTS_EQUATION "0.01"
+    OBSERVATION_S_TABLE_NAME opeak12
+    MODEL_S_TABLE_NAME mpeak12
+    S_TABLE_WEIGHTS_EQUATION "0.01"
+    OBSERVATION_S_TABLE_NAME opeak13
+    MODEL_S_TABLE_NAME mpeak13
+    S_TABLE_WEIGHTS_EQUATION "0.01"
+    OBSERVATION_S_TABLE_NAME opeak14
+    MODEL_S_TABLE_NAME mpeak14
+    S_TABLE_WEIGHTS_EQUATION "0.01"
+    OBSERVATION_S_TABLE_NAME opeak15
+    MODEL_S_TABLE_NAME mpeak15
+    S_TABLE_WEIGHTS_EQUATION "0.01"
+    OBSERVATION_S_TABLE_NAME opeak16
+    MODEL_S_TABLE_NAME mpeak16
+    S_TABLE_WEIGHTS_EQUATION "0.01"
+    OBSERVATION_S_TABLE_NAME opeak17
+    MODEL_S_TABLE_NAME mpeak17
+    S_TABLE_WEIGHTS_EQUATION "0.01"
+    OBSERVATION_S_TABLE_NAME opeak18
+    MODEL_S_TABLE_NAME mpeak18
+    S_TABLE_WEIGHTS_EQUATION "0.01"
+    OBSERVATION_E_TABLE_NAME otime
+    MODEL_E_TABLE_NAME mtime
+    E_TABLE_WEIGHTS_EQUATION "100"
+    OBSERVATION_SERIES_NAME obaseind
+    MODEL_SERIES_NAME mbaseind
+    SERIES_WEIGHTS_EQUATION "1"
+    Reading parameter group file group.dat ....
+    - data for 11 parameter groups read from file group.dat
+    Reading parameter data file parm.dat ....
+    - data for 24 parameters read from file parm.dat
+    Reading template file p2p_bigelk.tpl ....
+    - 24 parameter names read from file p2p_bigelk.tpl
+    Writing instruction file model.ins ....
+
+ Execution terminated so file not overwritten.
