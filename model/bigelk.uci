@@ -11,8 +11,8 @@ FILES
 <FILE>  <UN#>***<----FILE NAME------------------------------------------------->
 MESSU      24   bigelk.ech
            91   bigelk.out
-WDM1       25   ..\bigelk_out.wdm
-WDM2       26   ..\bigelk_in.wdm
+WDM1       25   bigelk_out.wdm
+WDM2       26   bigelkwqupdt.wdm
 BINO       92   bigelk.hbn
 PESTSU     27   bigelk.sup
 END FILES

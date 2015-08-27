@@ -6,7 +6,7 @@ END SETTINGS
 
 START GET_SERIES_WDM
   CONTEXT all
-  FILE C:\HSPF\bigelk_out.wdm
+  FILE bigelk_out.wdm
   DSN 102
   NEW_SERIES_NAME mflow
   DEF_TIME 00:00:00
@@ -15,7 +15,7 @@ END GET_SERIES_WDM
 
 START GET_SERIES_WDM
   CONTEXT all
-  FILE C:\HSPF\bigelk_out.wdm
+  FILE bigelk_out.wdm
   DSN 301
   NEW_SERIES_NAME oflow
   DEF_TIME 00:00:00
@@ -24,7 +24,7 @@ END GET_SERIES_WDM
 
 START GET_SERIES_WDM
   CONTEXT all
-  FILE C:\HSPF\bigelk_out.wdm
+  FILE bigelk_out.wdm
   DSN 103
   NEW_SERIES_NAME mpero
   FILTER -999
@@ -32,7 +32,7 @@ END GET_SERIES_WDM
 
 START GET_SERIES_WDM
   CONTEXT all
-  FILE C:\HSPF\bigelk_out.wdm
+  FILE bigelk_out.wdm
   DSN 104
   NEW_SERIES_NAME magwo
   FILTER -999
