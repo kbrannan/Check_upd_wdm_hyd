@@ -1,5 +1,5 @@
 
- Processing information contained in TSPROC input file tsproc.dat....
+ Processing information contained in TSPROC input file M:\Models\Bacteria\HSPF\HydroCal201506\R_projs\Check_upd_wdm_hyd\model\tsproc.dat....
 
  Processing SETTINGS block....
     DATE_FORMAT mm/dd/yyyy
@@ -8,41 +8,41 @@
 
  Processing GET_SERIES_WDM block....
     CONTEXT all
-    FILE C:\Users\kbrannan\Documents\BigElkCreek\parest\bigelk_out.wdm
+    FILE bigelk_out.wdm
     DSN 102
     NEW_SERIES_NAME mflow
     DEF_TIME 00:00:00
     FILTER -999
-    Reading WDM file C:\Users\kbrannan\Documents\BigElkCreek\parest\bigelk_out.wdm....
-    Series "mflow" successfully imported from file C:\Users\kbrannan\Documents\BigElkCreek\parest\bigelk_out.wdm
+    Reading WDM file bigelk_out.wdm....
+    Series "mflow" successfully imported from file bigelk_out.wdm
 
  Processing GET_SERIES_WDM block....
     CONTEXT all
-    FILE C:\Users\kbrannan\Documents\BigElkCreek\parest\bigelk_out.wdm
+    FILE bigelk_out.wdm
     DSN 301
     NEW_SERIES_NAME oflow
     DEF_TIME 00:00:00
     FILTER -999
-    Reading WDM file C:\Users\kbrannan\Documents\BigElkCreek\parest\bigelk_out.wdm....
-    Series "oflow" successfully imported from file C:\Users\kbrannan\Documents\BigElkCreek\parest\bigelk_out.wdm
+    Reading WDM file bigelk_out.wdm....
+    Series "oflow" successfully imported from file bigelk_out.wdm
 
  Processing GET_SERIES_WDM block....
     CONTEXT all
-    FILE C:\Users\kbrannan\Documents\BigElkCreek\parest\bigelk_out.wdm
+    FILE bigelk_out.wdm
     DSN 103
     NEW_SERIES_NAME mpero
     FILTER -999
-    Reading WDM file C:\Users\kbrannan\Documents\BigElkCreek\parest\bigelk_out.wdm....
-    Series "mpero" successfully imported from file C:\Users\kbrannan\Documents\BigElkCreek\parest\bigelk_out.wdm
+    Reading WDM file bigelk_out.wdm....
+    Series "mpero" successfully imported from file bigelk_out.wdm
 
  Processing GET_SERIES_WDM block....
     CONTEXT all
-    FILE C:\Users\kbrannan\Documents\BigElkCreek\parest\bigelk_out.wdm
+    FILE bigelk_out.wdm
     DSN 104
     NEW_SERIES_NAME magwo
     FILTER -999
-    Reading WDM file C:\Users\kbrannan\Documents\BigElkCreek\parest\bigelk_out.wdm....
-    Series "magwo" successfully imported from file C:\Users\kbrannan\Documents\BigElkCreek\parest\bigelk_out.wdm
+    Reading WDM file bigelk_out.wdm....
+    Series "magwo" successfully imported from file bigelk_out.wdm
 
  Processing SERIES_EQUATION block....
     CONTEXT all

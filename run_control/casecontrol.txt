@@ -1,0 +1,8 @@
+PEST control file: bewqopt.pst
+Host:   \\wq100255-kbrann.deq.state.or.us\C$\temp\pest\bigelkpest\host : \Program Files\R\R-3.0.1\bin\x64\
+Client: \\wq100255-kbrann.deq.state.or.us\C$\temp\PEST_client\CPU01 : \Program Files\R\R-3.0.1\bin\x64\
+Client: \\wq100255-kbrann.deq.state.or.us\C$\temp\PEST_client\CPU02 : \Program Files\R\R-3.0.1\bin\x64\
+Client: \\wq100255-kbrann.deq.state.or.us\C$\temp\PEST_client\CPU03 : \Program Files\R\R-3.0.1\bin\x64\
+Client: \\wq100255-kbrann.deq.state.or.us\C$\temp\PEST_client\CPU04 : \Program Files\R\R-3.0.1\bin\x64\
+Client: \\wq100255-kbrann.deq.state.or.us\C$\temp\PEST_client\CPU05 : \Program Files\R\R-3.0.1\bin\x64\
+Client: \\wq100255-kbrann.deq.state.or.us\C$\temp\PEST_client\CPU06 : \Program Files\R\R-3.0.1\bin\x64\
