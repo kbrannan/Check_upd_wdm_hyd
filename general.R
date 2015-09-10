@@ -30,4 +30,9 @@ cat(str.uci,file=paste0(getwd(),"/model/bigelk.uci"),sep="\n")
 shell(cmd=paste0("cscript.exe //nologo ",getwd(),"/run_control/RunPEST.vbs"))
 file.copy(from=paste0(getwd(),"/model/model.out"),to=paste0(getwd(),"/model/model_upd.out"))
 
+# get info about the 
+lst.out <- modelout(str.file=paste0(getwd(),"/model/model.out"))
+
+# create output data.frame
+junk <- modelout_table(ii=22,lst.in=lst.out)
 
