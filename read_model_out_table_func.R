@@ -64,5 +64,8 @@ modelout_table <- function(ii,lst.in) {
                                             id=tmp.id))
     }
   }
+# convert value from character to numeric
+  tmp.data$value <- as.numeric(tmp.data$value)
+# done
   return(tmp.data)
 }

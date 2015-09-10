@@ -33,6 +33,9 @@ file.copy(from=paste0(getwd(),"/model/model.out"),to=paste0(getwd(),"/model/mode
 # get info about the 
 lst.out <- modelout(str.file=paste0(getwd(),"/model/model.out"))
 
+
+
 # create output data.frame
-junk <- modelout_table(ii=22,lst.in=lst.out)
+junk <- do.call(rbind,lapply(1:length(lst.out$df.info$name),
+                             modelout_table,lst.in=lst.out))
 
