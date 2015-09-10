@@ -17,11 +17,12 @@ Function StartHostPEST(strCurPath, strPESTFile)
     strCurDir = strCurPath
 	On Error Resume Next
 	Set objPESTStop = WScript.CreateObject ("WScript.shell")
-	Return = objPESTStop.run ("cmd /K title PEST Stop Window & pushd " & strCurDir,7,FALSE)
-	Set objPESTStop = Nothing
+'	Return = objPESTStop.run ("cmd /K title PEST Stop Window & pushd " & strCurDir,7,FALSE)
+'	Set objPESTStop = Nothing
 	
 	Set objPESTCommand = WScript.CreateObject ("WScript.shell")
-	Return = objPESTCommand.run ("cmd /K title PEST Command Window & pushd " & strCurDir & " & c:\pest\pest.exe " & strPESTFile,1,FALSE)
+	Return = objPESTCommand.run ("cmd /C title PEST Command Window & pushd " & strCurDir & " & c:\pest\pest.exe " & strPESTFile,1,FALSE)
+	objPESTCommand.close
 	Set objPESTCommand = Nothing
 	
 	StartHostPEST = Err.Number

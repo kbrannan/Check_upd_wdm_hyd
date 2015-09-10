@@ -18,12 +18,16 @@ str.uci[num.WDM2] <- gsub("bigelk.*\\.wdm$",str.org.wdm,str.uci[num.WDM2])
 cat(str.uci,file=paste0(getwd(),"/model/bigelk.uci"),sep="\n")
 
 # run pest and make copy of output
-shell(cmd=paste0("cscript ",getwd(),"/run_control/RunPEST.vbs"))
-shell(cmd=paste0("copy ",getwd(),"/model/model.out ",getwd(),"/model/model_org.out"))
+shell(cmd=paste0("cscript.exe //nologo ",getwd(),"/run_control/RunPEST.vbs"))
+file.copy(from=paste0(getwd(),"/model/model.out"),to=paste0(getwd(),"/model/model_org.out"))
 
 # set the meterorological input file for original
 str.upd.wdm <- "bigelkwqupdt.wdm"
 str.uci[num.WDM2] <- gsub("bigelk.*\\.wdm$",str.upd.wdm,str.uci[num.WDM2])
 cat(str.uci,file=paste0(getwd(),"/model/bigelk.uci"),sep="\n")
+
+# run pest and make copy of output
+shell(cmd=paste0("cscript.exe //nologo ",getwd(),"/run_control/RunPEST.vbs"))
+file.copy(from=paste0(getwd(),"/model/model.out"),to=paste0(getwd(),"/model/model_upd.out"))
 
 

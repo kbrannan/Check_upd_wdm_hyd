@@ -59,19 +59,16 @@ PERLND
 *** x -  x ATMP SNOW PWAT  SED  PST  PWG PQAL MSTL PEST NITR PHOS TRAC ***
   111  322    0    0    1    0    0    0    0    0    0    0    0    0
   END ACTIVITY
-
   PRINT-INFO
 *** < PLS>                       Print-flags                           PIVL  PYR
 *** x  - x ATMP SNOW PWAT  SED  PST  PWG PQAL MSTL PEST NITR PHOS TRAC
   111  322    0    0    4    0    0    0    0    0    0    0    0    0    1    9
   END PRINT-INFO
-
   BINARY-INFO
 *** < PLS>               Binary Output Flags                           PIVL  PYR
 *** x  - x ATMP SNOW PWAT  SED  PST  PWG PQAL MSTL PEST NITR PHOS TRAC
   111  322    0    0    4    0    0    0    0    0    0    0    0    0    1    9
   END BINARY-INFO
-
   GEN-INFO
 ***             Name                  Unit-systems   Printer BinaryOut
 *** <PLS >                                t-series Engl Metr Engl Metr
@@ -87,13 +84,11 @@ PERLND
   321     Developed/HPerm/Wet                1    1    0    0    0    
   322     Developed/LPerm/Dry                1    1    0    0    0    
   END GEN-INFO
-
   PWAT-PARM1
 *** <PLS >                   Flags
 *** x -  x CSNO RTOP UZFG  VCS  VUZ  VNN VIFW VIRC  VLE IFFC  HWT IRRG IFRD
   111  322    0    1    1    1    0    0    0    0    1    1    0    0    0
   END PWAT-PARM1
-
   PWAT-PARM2
 *** < PLS>    FOREST      LZSN    INFILT      LSUR     SLSUR     KVARY     AGWRC
 *** x  - x                (in)   (in/hr)      (ft)              (1/in)   (1/day)
@@ -108,13 +103,11 @@ PERLND
   321     ~9~     0.        8.       0.1       270      0.15        0.      0.98
   322     ~10~    0.        3.       0.1       270      0.15        0.      0.98
   END PWAT-PARM2
-
   PWAT-PARM3
 *** < PLS>    PETMAX    PETMIN    INFEXP    INFILD    DEEPFR    BASETP    AGWETP
 *** x  - x   (deg F)   (deg F)
   111  322~11~   32.       30.        2.        2.      0.01      0.03        0.
   END PWAT-PARM3
-
   PWAT-PARM4
 *** <PLS >     CEPSC      UZSN      NSUR     INTFW       IRC     LZETP
 *** x -  x      (in)      (in)                       (1/day)
@@ -122,13 +115,11 @@ PERLND
   212  222~13~   0.1       0.5       0.3       1.0       0.5       0.1
   312  322~14~   0.1       0.5       0.3       1.0       0.5       0.1
   END PWAT-PARM4
-
   PWAT-STATE1
 *** < PLS>  PWATER state variables (in)
 *** x  - x      CEPS      SURS       UZS      IFWS       LZS      AGWS      GWVS
   111  322      0.00      0.00       0.5      0.00       0.5       1.0      0.00
   END PWAT-STATE1
-
   MON-INTERCEP
 *** <PLS >  Interception storage capacity at start of each month (in)
 *** x -  x  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC
@@ -136,7 +127,6 @@ PERLND
   212  222~16~5 0.15 0.15  0.2  0.2  0.2  0.2  0.2  0.2  0.2 0.15 0.15
   312  322~17~5 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05 0.05
   END MON-INTERCEP
-
   MON-LZETPARM
 *** <PLS >  Lower zone evapotransp   parm at start of each month
 *** x -  x  JAN  FEB  MAR  APR  MAY  JUN  JUL  AUG  SEP  OCT  NOV  DEC
@@ -144,7 +134,6 @@ PERLND
   212  222~19~2  0.2  0.2  0.3  0.4  0.4  0.4  0.4  0.4  0.3  0.2  0.2
   312  322~20~2  0.2  0.2  0.3  0.4  0.4  0.4  0.4  0.4  0.3  0.2  0.2
   END MON-LZETPARM
-
 END PERLND
  
 IMPLND
@@ -153,19 +142,16 @@ IMPLND
 *** x -  x ATMP SNOW IWAT  SLD  IWG IQAL
   301  302    0    0    1    0    0    0
   END ACTIVITY
-
   PRINT-INFO
 *** <ILS > ******** Print-flags ******** PIVL  PYR
 *** x -  x ATMP SNOW IWAT  SLD  IWG IQAL *********
   301  302    0    0    4    0    0    0    1    9
   END PRINT-INFO
-
   BINARY-INFO
 *** <ILS > **** Binary-Output-flags **** PIVL  PYR
 *** x -  x ATMP SNOW IWAT  SLD  IWG IQAL *********
   301  302    0    0    4    0    0    0    1    9
   END BINARY-INFO
-
   GEN-INFO
 ***             Name             Unit-systems   Printer BinaryOut
 *** <ILS >                           t-series Engl Metr Engl Metr
@@ -173,31 +159,26 @@ IMPLND
   301     Developed/Wet                1    1    0    0    0    0
   302     Developed/Dry                1    1    0    0    0    0
   END GEN-INFO
-
   IWAT-PARM1
 *** <ILS >        Flags
 *** x -  x CSNO RTOP  VRS  VNN RTLI
   301  302    0    1    0    0    0
   END IWAT-PARM1
-
   IWAT-PARM2
 *** <ILS >      LSUR     SLSUR      NSUR     RETSC
 *** x -  x      (ft)                          (in)
   301  302       100     0.05       0.05       0.1
   END IWAT-PARM2
-
   IWAT-PARM3
 *** <ILS >    PETMAX    PETMIN
 *** x -  x   (deg F)   (deg F)
   301  302       32.       30.
   END IWAT-PARM3
-
   IWAT-STATE1
 *** <ILS >  IWATER state variables (inches)
 *** x -  x      RETS      SURS
   301  302      0.00      0.00
   END IWAT-STATE1
-
 END IMPLND
  
 COPY
@@ -205,7 +186,6 @@ COPY
     #    #  NPT  NMN ***
     1              4
   END TIMESERIES
-
 END COPY
  
 RCHRES
@@ -214,19 +194,16 @@ RCHRES
 *** x -  x HYFG ADFG CNFG HTFG SDFG GQFG OXFG NUFG PKFG PHFG
     1   18    1    0    0    0    0    0    0    0    0    0
   END ACTIVITY
-
   PRINT-INFO
 *** RCHRES  Printout level flags
 *** x -  x HYDR ADCA CONS HEAT  SED  GQL OXRX NUTR PLNK PHCB PIVL  PYR
     1   18    4    0    0    0    0    0    0    0    0    0    1    9
   END PRINT-INFO
-
   BINARY-INFO
 *** RCHRES  Binary Output level flags
 *** x -  x HYDR ADCA CONS HEAT  SED  GQL OXRX NUTR PLNK PHCB PIVL  PYR
     1   18    4    0    0    0    0    0    0    0    0    0    1    9
   END BINARY-INFO
-
   GEN-INFO
 ***              Name           Nexits   Unit Systems   Printer
 *** RCHRES                                  t-series  Engl Metr LKFG
@@ -250,14 +227,12 @@ RCHRES
    17     Big Elk Crk,Up 34452                 1    1    0    0    0    0  
    18     Big Elk Crk,Outlet                   1    1    0    0    0    0  
   END GEN-INFO
-
   HYDR-PARM1
 ***         Flags for HYDR section
 ***RC HRES  VC A1 A2 A3  ODFVFG for each *** ODGTFG for each     FUNCT  for each
 *** x  - x  FG FG FG FG  possible   exit *** possible   exit     possible   exit
     1   18   0  1  1  1    4  0  0  0  0       0  0  0  0  0       1  1  1  1  1
   END HYDR-PARM1
-
   HYDR-PARM2
 *** RCHRES FTBW FTBU       LEN     DELTH     STCOR        KS      DB50
 *** x -  x             (miles)      (ft)      (ft)                (in)
@@ -280,7 +255,6 @@ RCHRES
    17         0   17      1.85       999       0.0       0.5      0.01
    18         0   18      3.18       999       0.0       0.5      0.01
   END HYDR-PARM2
-
   HYDR-INIT
 ***         Initial conditions for HYDR section
 ***RC HRES       VOL  CAT Initial value  of COLIND     initial  value  of OUTDGT
@@ -304,7 +278,6 @@ RCHRES
    17             44         4    4    4    4    4         0    0    0    0    0
    18             78         4    4    4    4    4         0    0    0    0    0
   END HYDR-INIT
-
 END RCHRES
  
 FTABLES
