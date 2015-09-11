@@ -12,6 +12,9 @@ modelout_table <- function(ii,lst.in) {
 # get charactervecot of model.out and info data.frame from input list
   str.out <- lst.in$str.out
   df.info <- lst.in$df.info
+
+  paste0("ii = ",ii)
+  
   
 # extract from a TIME_SERIES type
   if(df.info$type[ii] == "TIME_SERIES") {
